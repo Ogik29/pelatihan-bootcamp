@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\homeController;
+use App\Http\Controllers\welcomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,8 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home', [
-        'isi' => 'Teyvat'
-    ]);
-});
+Route::get('/', [homeController::class, 'show']);
+
+Route::get('/welcome/{namaIsi}', [welcomeController::class, 'show']);
