@@ -10,7 +10,8 @@ class homeController extends Controller
     {
         return view('home', [
             'title' => 'Home',
-            'isi' => 'Teyvat'
+            'isi' => 'Teyvat',
+            'link' => 'Luvsana'
         ]);
     }
 }
