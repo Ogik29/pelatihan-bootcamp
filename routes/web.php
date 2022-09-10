@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\homeController;
+use App\Http\Controllers\KelasController;
 use App\Http\Controllers\welcomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,3 +19,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [homeController::class, 'show']);
 
 Route::get('/welcome/{namaIsi}', [welcomeController::class, 'show']);
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -8,7 +8,9 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+use Jenssegers\Mongodb\Eloquent\Model as Eloquent; // harus menambahkan ini jika menggunakan mongoDB
+
+class User extends Eloquent // harus extends ke Eloquent jika menggunakan mongoDB
 {
     use HasApiTokens, HasFactory, Notifiable;
 
