@@ -49,9 +49,21 @@ class SiswaController extends Controller
     public function show($id)
     {
         $siswa = Siswa::find($id);
-        $siswa->nilai_mapel;
+        $nilai_mapel = [];
 
-        return $siswa;
+        foreach ($siswa->nilai_mapel as $snp) {
+
+            $nilai_mapel['id'] = $snp->id;
+            $nilai_mapel['nama_mapel'] = $snp->mapel->nama_mapel;
+            $nilai_mapel['rata_rata'] = $snp->rata_rata;
+
+            $data[] = $nilai_mapel;
+        }
+
+        return [
+            'siswa' => ['nama' => $siswa->nama, 'kelas' => $siswa->kelas->nama_kelas],
+            'nilai' => $data
+        ];
     }
 
     /**
@@ -86,5 +98,14 @@ class SiswaController extends Controller
     public function destroy(Siswa $siswa)
     {
         //
+    }
+
+    public function getDetailNilai($nilai_id)
+    {
+        $nama_siswa = NilaiMapel::find($nilai_id)->siswa->nama;
+        $nama_mapel = NilaiMapel::find($nilai_id)->mapel->nama_mapel;
+        $detail_nilai = NilaiMapel::find($nilai_id);
+
+        return ['nama_siswa' => $nama_siswa, 'mapel' => $nama_mapel, 'detail_nilai' => $detail_nilai];
     }
 }

@@ -27,8 +27,8 @@ class NilaiMapelFactory extends Factory
         $random_mapel = rand(0, $lastData2);
 
         return [
-            'siswa_id' => $siswa_id[$random_siswa], // '631cac44cc81123c7c0881fd'
-            'mapel_id' => $mapel_id[$random_mapel], // '631cac44cc81123c7c088201'
+            'siswa_id' => $siswa_id[$random_siswa], // $siswa_id[$random_siswa]
+            'mapel_id' => $mapel_id[$random_mapel], // $mapel_id[$random_mapel]
             'ls_1' => 100,
             'ls_2' => 100,
             'ls_3' => 100,

@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\KelasController;
+use App\Http\Controllers\MapelController;
+use App\Http\Controllers\NilaiMapelController;
 use App\Http\Controllers\SiswaController;
+use App\Models\NilaiMapel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,3 +26,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::resource('/kelas', KelasController::class);
 
 Route::resource('/siswa', SiswaController::class);
+
+Route::resource('/mapel', MapelController::class);
+
+Route::resource('/nilai_mapel', NilaiMapelController::class);
+
+Route::get('/detail_nilai/{nilai_id}', [SiswaController::class, 'getDetailNilai']);

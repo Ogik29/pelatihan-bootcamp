@@ -14,7 +14,7 @@ class MapelController extends Controller
      */
     public function index()
     {
-        //
+        return Mapel::all();
     }
 
     /**
